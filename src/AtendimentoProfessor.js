@@ -17,4 +17,11 @@ class AtendimentoProfessor {
       throw new Error('Sala inválida');
     }
   }
+
+  horarioDeAtendimentoValido(){
+    if(!this.horarioDeAtendimento  || this.horarioDeAtendimento.lenght < 13) throw new Error('Horário de atendimento não informado');	
+    if(parseInt(this.horarioDeAtendimento.slice(0,2)) < 8 || parseInt(this.horarioDeAtendimento.slice(0,2)) > 21) throw new Error('Horário de atendimento inválido');
+  }
 }
+
+module.exports = AtendimentoProfessor;
