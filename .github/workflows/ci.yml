@@ -66,5 +66,5 @@ jobs:
     needs: build  # Rodar após o build
     steps:
       - name: Send notification email
-        run: echo "Pipeline executado com sucesso!" | mail -s "Status do Pipeline" ${{ secrets.EMAIL_TO }}
+        run: echo "Pipeline executado com sucesso!" | mail -s "Status do Pipeline" ${{ secrets.EMAIL_PARA }}
 
