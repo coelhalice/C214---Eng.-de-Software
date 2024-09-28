@@ -55,8 +55,10 @@ jobs:
         path: dist/ 
 
   notify:
-    runs-on: ubuntu-latest
-    needs: build  
-    steps:
-      - name: Send notification email
-        run: echo "Pipeline executado com sucesso!" | mail -s "Status do Pipeline" ${{ secrets.EMAIL_PARA}}
+      needs: build
+  
+      runs-on: ubuntu-latest
+      steps:
+        - name: Executa scripts externos (versionados)
+          uses: actions/checkout@v4
+        - run: sh scripts/send_email.sh
