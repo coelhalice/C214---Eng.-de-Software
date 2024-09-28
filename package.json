@@ -16,7 +16,9 @@
   },
   "scripts": {
     "test": "jest --collect-coverage",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "start"
+    
   },
   "author": "",
   "license": "ISC"
